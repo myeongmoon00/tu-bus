@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>TU셔틀버스 시간표</title>
+</head>
+<body>
+    <div>
+        <img src="title.png" alt="" width="70%" >
+    </div>
+    <p id="clock" style="color:black;">clock</p>
+    <script>
+        var Target = document.getElementById("clock");
+        function clock() {
+            var time = new Date();
+
+            var month = time.getMonth();
+            var date = time.getDate();
+            var day = time.getDay();
+            var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+
+            Target.innerText = 
+            `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+            `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+                
+        }
+        clock();
+        setInterval(clock, 1000); // 1초마다 실행
+    </script>
+    <div>
+        <img src="busstation.svg" alt="" width="88%">
+    </div>
+    <div class="mm"></div>
+    <div class="m2">
+        <button type="button" onclick="location.href='day.html'">오전</button>
+    </div>
+    <div class="m2"> 
+        <button type="button" onclick="location.href='night.html'">오후</button>
+    </div>
+    <div class="m2">
+        <button type="button" onclick="location.href='all_time.html'">전체</button>
+    </div>
+    <p>해당 사이트는 모바일 버전으로 만들었습니다</p>
+    <p>동명대학교 정보보호학과 19학번 하명윤</p>
+</body>
+</html>

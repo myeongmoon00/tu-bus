@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>TU셔틀버스 시간표</title>
+</head>
+<body>
+    <div>
+        <img src="title.png" alt="" width="80%" >
+    </div>
+    <p id="clock" style="color:black;">clock</p>
+    <script>
+        var Target = document.getElementById("clock");
+        function clock() {
+            var time = new Date();
+
+            var month = time.getMonth();
+            var date = time.getDate();
+            var day = time.getDay();
+            var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+
+            Target.innerText = 
+            `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+            `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+                
+        }
+        clock();
+        setInterval(clock, 1000); // 1초마다 실행
+    </script>
+    <img src="busstation.svg" alt="" width="50%">
+    <div class="m1"></div>
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td rowspan="5">오전</td>
+                <td rowspan="3">10분</td>
+                <td>08:00</td>
+                <td>08:10</td>
+                <td>08:20</td>
+                <td>08:30</td>
+            </tr>
+            <tr>
+                <td>08:40</td>
+                <td>08:50</td>
+                <td>09:00</td>
+                <td>09:10</td>
+            </tr>
+            <tr>
+                <td>09:20</td>
+                <td>09:30</td>
+                <td>09:40</td>
+                <td>09:50</td>
+            </tr>
+            <tr>
+                <td rowspan="2">15분</td>
+                <td>10:00</td>
+                <td>10:15</td>
+                <td>10:30</td>
+                <td>10:45</td>
+            </tr>
+            <tr>
+                <td>11:00</td>
+                <td>11:15</td>
+                <td>11:30</td>
+                <td>11:45</td>
+            </tr>
+            <tr>
+                <td rowspan="8">오후</td>
+                <td rowspan="2">30분</td>
+                <td>12:10</td>
+                <td>12:40</td>
+                <td>01:10</td>
+                <td>01:40</td>
+            </tr>
+            <tr>
+                <td>02:10</td>
+                <td>02:40</td>
+                <td>03:10</td>
+                <td>03:40</td>
+            </tr>
+            <tr>
+                <td rowspan="6">10분</td>
+                <td>04:00</td>
+                <td>04:10</td>
+                <td>04:20</td>
+                <td>04:30</td>
+            </tr>
+            <tr>
+                <td>04:40</td>
+                <td>04:50</td>
+                <td>05:00</td>
+                <td>05:10</td>
+            </tr>
+            <tr>
+                <td>05:20</td>
+                <td>05:30</td>
+                <td>05:40</td>
+                <td>05:50</td>
+            </tr>
+            <tr>
+                <td>06:00</td>
+                <td>06:10</td>
+                <td>06:20</td>
+                <td>06:30</td>
+            </tr>
+            <tr>
+                <td>06:40</td>
+                <td>06:50</td>
+                <td>07:00</td>
+                <td>07:10</td>
+            </tr>
+            <tr>
+                <td>07:20</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    <div>
+        <button type="button" onclick="location.href='main.html'">돌아가기</button>
+    </div>
+    
+</body>
+</html>

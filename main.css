@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+}
+
+table td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+button {
+    width: 200px;
+    height: 40px;
+    background-color: #004FFF;
+    color: white;
+    box-shadow: 0 4px 16px rgba(0, 79,255, 0.3);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+button:focus{
+    outline: 0px;
+}
+button:hover{
+    background-color: rgba(0, 79,255, 0.9);
+    cursor: point;
+}
+.title{
+    font-size: 20px;
+    text-align: center;
+}
+.mark{
+    float: left;
+}
+.mm{
+    height: 30px;
+}
+.m2{
+    height: 60px;
+}
+.m1{
+    height: 10px;
+}
